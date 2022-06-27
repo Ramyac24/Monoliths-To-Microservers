@@ -1,0 +1,79 @@
+version: '3.3'  # version of compose format
+
+services:
+  landing-service:
+    build: ./landing  # path is relative to docker-compose.yml location
+    hostname: landing-service
+    ports:
+      - 5050:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - landing-service
+  # Add more services below
+  add-service:
+    build: ./landing/add-service  # path is relative to docker-compose.yml location
+    hostname: add-service
+    ports:
+      - 5051:5051  # host:container
+    networks:
+      sample:
+        aliases:
+          - add-service
+  minus-service:
+    build: ./landing/minus-service  # path is relative to docker-compose.yml location
+    hostname: minus-service
+    ports:
+      - 5052:5052  # host:container
+    networks:
+      sample:
+        aliases:
+          - minus-service
+  multiply-service:
+    build: ./landing/multiply-service  # path is relative to docker-compose.yml location
+    hostname: multiply-service
+    ports:
+      - 5053:5053  # host:container
+    networks:
+      sample:
+        aliases:
+          - multiply-service
+  division-service:
+    build: ./landing/division-service  # path is relative to docker-compose.yml location
+    hostname: division-service
+    ports:
+      - 5054:5054  # host:container
+    networks:
+      sample:
+        aliases:
+          - division-service
+  exponent-service:
+    build: ./landing/exponent-service  # path is relative to docker-compose.yml location
+    hostname: exponent-service
+    ports:
+      - 5055:5055  # host:container
+    networks:
+      sample:
+        aliases:
+          - exponent-service
+  lesserthan-service:
+    build: ./landing/lesser-than-service  # path is relative to docker-compose.yml location
+    hostname: lesserthan-service
+    ports:
+      - 5056:5056  # host:container
+    networks:
+      sample:
+        aliases:
+          - lesserthan-service
+  greaterthan-service:
+    build: ./landing/greater-than-service  # path is relative to docker-compose.yml location
+    hostname: greaterthan-service
+    ports:
+      - 5057:5057  # host:container
+    networks:
+      sample:
+        aliases:
+          - greaterthan-service
+ 
+networks:
+  sample: 
